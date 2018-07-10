@@ -88,6 +88,7 @@ body {
     margin: 15px;
     padding: 15px;
     text-align: center;
+    visibility: hidden;
     width: 200px;
 }
 #current p {
