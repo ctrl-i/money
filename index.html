@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/apple-touch-icon-57x57.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/apple-touch-icon-114x114.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="favicon/apple-touch-icon-72x72.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="favicon/apple-touch-icon-144x144.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="60x60" href="favicon/apple-touch-icon-60x60.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon/apple-touch-icon-120x120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon/apple-touch-icon-76x76.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon/apple-touch-icon-152x152.png" />
+        <link rel="icon" type="image/png" href="favicon/favicon-196x196.png" sizes="196x196" />
+        <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="favicon/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="favicon/favicon-16x16.png" sizes="16x16" />
+        <link rel="icon" type="image/png" href="favicon/favicon-128.png" sizes="128x128" />
+        <meta name="application-name" content="&nbsp;"/>
+        <meta name="msapplication-TileColor" content="#FFFFFF" />
+        <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="favicon/mstile-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="favicon/mstile-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="favicon/mstile-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="favicon/mstile-310x310.png" />
+        <title>Money Boffin Exchange Rates</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- page content -->
+        <div id="money"></div>
+        <div id="summary">
+            <div class="k k1 icon"></div>
+            <div class="k k1 high" title="Highest value in the data set and how much it differs from the current value.">&#9650;</div>
+            <div class="k k1 average" title="Average value and standard deviation of the data set and how much it differs from the current value.">&#9673;</div>
+            <div class="k k1 low" title="Lowest value in the data set and how much it differs from the current value.">&#9660;</div>
+            <div class="k k1 rank" title="Rank - the number of values in the data set greater than the current value, lower is better.">&#247;</div>
+            <div class="k k1 from" title="The start date of the data set.">from</div>
+            <div class="k k1 to" title="The end date of the data set.">to</div>
+            <div id="record_icon" class="record icon" title="The data set is all of the available data.">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M97.12 362.63l-5.3-5.3a9.004 9.004 0 0 0-4.02-2.32L72 350.77c-9.51-2.55-17.87-7.45-25.43-13.32L1.2 448.7c-4.39 10.77 3.81 22.47 15.43 22.03l52.69-2.01L105.56 507c8 8.44 22.04 5.81 26.43-4.96l52.05-127.62c-10.84 6.04-22.87 9.58-35.31 9.58-19.5 0-37.82-7.59-51.61-21.37zM382.8 448.7l-45.37-111.24c-7.56 5.88-15.92 10.77-25.43 13.32l-15.8 4.23a9.004 9.004 0 0 0-4.02 2.32l-5.3 5.3C273.09 376.41 254.76 384 235.26 384c-12.44 0-24.47-3.55-35.31-9.58L252 502.04c4.39 10.77 18.44 13.4 26.43 4.96l36.25-38.28 52.69 2.01c11.62.44 19.82-11.27 15.43-22.03zM263 340l5.21-5.3c5-5.09 11.22-8.75 18.05-10.61l15.53-4.23c13.89-3.79 24.75-14.84 28.47-28.98l4.16-15.81a41.145 41.145 0 0 1 10.42-18.37l11.37-11.57c10.17-10.35 14.14-25.44 10.42-39.58l-4.16-15.81a41.657 41.657 0 0 1 0-21.21l4.16-15.81c3.72-14.14-.25-29.23-10.42-39.58l-11.37-11.57c-5-5.09-8.59-11.42-10.42-18.37l-4.16-15.8c-3.72-14.14-14.58-25.19-28.47-28.98l-15.53-4.24c-6.83-1.86-13.05-5.52-18.05-10.61L256.84 12c-10.17-10.35-25-14.4-38.89-10.61l-15.53 4.24a39.614 39.614 0 0 1-20.84 0L166.05 1.4c-13.89-3.79-28.72.25-38.89 10.61l-11.37 11.57c-5 5.09-11.22 8.74-18.05 10.61l-15.53 4.24c-13.89 3.79-24.75 14.84-28.47 28.98l-4.16 15.8a41.145 41.145 0 0 1-10.42 18.37l-11.37 11.57c-10.17 10.35-14.15 25.44-10.42 39.58l4.16 15.8a41.657 41.657 0 0 1 0 21.21l-4.16 15.8c-3.72 14.14.25 29.23 10.42 39.59l11.37 11.57c5 5.09 8.59 11.42 10.42 18.37l4.16 15.8c3.72 14.14 14.58 25.19 28.47 28.98l15.53 4.23c6.83 1.86 13.05 5.52 18.05 10.61L121 340c13.23 13.47 33.84 15.88 49.74 5.82a39.676 39.676 0 0 1 42.53 0c15.89 10.06 36.5 7.65 49.73-5.82zM97.66 175.96c0-53.03 42.24-96.02 94.34-96.02s94.34 42.99 94.34 96.02-42.24 96.02-94.34 96.02-94.34-42.99-94.34-96.02z"/></svg>
+            </div>
+            <div id="record_high" class="high record">
+                <span class="less" title="The highest ever recorded exchange rate.  Hovering gives you the difference in cents from the current exchange rate."></span>
+                <span class="more" title="The highest ever recorded exchange rate.  Hovering gives you the difference in cents from the current exchange rate."></span>
+            </div>
+            <div id="record_average" class="average record">
+                <span class="less" title="The average exchange rate over all of the data we have and its standard deviation.  Hovering gives you the difference in cents from the current exchange rate."></span>
+                <span class="more" title="The average exchange rate over all of the data we have and its standard deviation.  Hovering gives you the difference in cents from the current exchange rate."></span>
+            </div>
+            <div id="record_low" class="low record">
+                <span class="less" title="The lowest ever recorded exchange rate.  Hovering gives you the difference in cents from the current exchange rate."></span>
+                <span class="more" title="The lowest ever recorded exchange rate.  Hovering gives you the difference in cents from the current exchange rate."></span>
+            </div>
+            <div id="record_rank" class="rank record">
+                <span class="less" title="The number of data points greater than current exchange rate and the total number of data points in the data set.  Hovering gives you the percentage of data points greater than the current exchange rate.  Lower is better!"></span>
+                <span class="more" title="The number of data points greater than current exchange rate and the total number of data points in the data set.  Hovering gives you the percentage of data points greater than the current exchange rate.  Lower is better!"></span>
+            </div>
+            <div id="record_from" class="from record" title="When we started recording the exchange rate."></div>
+            <div id="record_to" class="to record" title="The date of the current exchange rate."></div>
+            <div id="picked_icon" class="picked icon" title="The data set used is the values currently on the graph.">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M500 384c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H12c-6.6 0-12-5.4-12-12V76c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v308h436zM372.7 159.5L288 216l-85.3-113.7c-5.1-6.8-15.5-6.3-19.9 1L96 248v104h384l-89.9-187.8c-3.2-6.5-11.4-8.7-17.4-4.7z"/></svg>
+            </div>
+            <div id="picked_high" class="high picked">
+                <span class="less" title="The highest recorded exchange rate in the selected data set.  Hovering gives you the difference in cents from the current exchange rate."></span>
+                <span class="more" title="The highest recorded exchange rate in the selected data set.  Hovering gives you the difference in cents from the current exchange rate."></span>
+            </div>
+            <div id="picked_average" class="average picked">
+                <span class="less" title="The average exchange rate in the selected data set and its standard deviation.  Hovering gives you the difference in cents from the current exchange rate."></span>
+                <span class="more" title="The average exchange rate in the selected data set and its standard deviation.  Hovering gives you the difference in cents from the current exchange rate."></span>
+            </div>
+            <div id="picked_low" class="low picked">
+                <span class="less" title="The lowest recorded exchange rate in the selected data set.  Hovering gives you the difference in cents from the current exchange rate."></span>
+                <span class="more" title="The lowest recorded exchange rate in the selected data set.  Hovering gives you the difference in cents from the current exchange rate."></span>
+            </div>
+            <div id="picked_rank" class="rank picked">
+                <span class="less" title="The number of data points greater than current exchange rate and the total number of data points in the data set.  Hovering gives you the percentage of data points greater than the current exchange rate.  Lower is better!"></span>
+                <span class="more" title="The number of data points greater than current exchange rate and the total number of data points in the data set.  Hovering gives you the percentage of data points greater than the current exchange rate.  Lower is better!"></span>
+            </div>
+            <div id="picked_from" class="from picked" title="The start date of the selected data set."></div>
+            <div id="picked_to" class="to picked" title="The end date of the selected data set."></div>
+            <div class="k k2 icon"></div>
+            <div class="k k2 high" title="Highest value in the data set and how much it differs from the current value.">&#9650;</div>
+            <div class="k k2 average" title="Average value and standard deviation of the data set and how much it differs from the current value.">&#9673;</div>
+            <div class="k k2 low" title="Lowest value in the data set and how much it differs from the current value.">&#9660;</div>
+            <div class="k k2 rank" title="Rank - the number of values in the data set greater than the current value, lower is better.">&#247;</div>
+            <div class="k k2 from" title="The start date of the data set.">from</div>
+            <div class="k k2 to" title="The end date of the data set.">to</div>
+        </div>
+        <div id="current">
+            <p><span id="current_value" title="The current exchange rate."></span><br><span id="last_updated" title="When the last exchange rate was recorded."></span></p>
+        </div>
+        <div id="buying_advice">
+            <h2>Should you buy your currency now?</h2>
+            <p>The last time the exchange rate was lower than this was <span id="lowest_since"></span> when it was $<span id="lowest_since_value"></span>.</p>
+            <p>The last time the exchange rate was higher than this was <span id="highest_since"></span> when it was $<span id="highest_since_value"></span>.</p>
+            <p id="best_day" tabindex="1" class="best"></p>
+            <p id="best_day_full" class="full"></p>
+            <p id="best_week" tabindex="1" class="best"></p>
+            <p id="best_week_full" class="full"></p>
+            <p id="best_month" tabindex="1" class="best"></p>
+            <p id="best_month_full" class="full"></p>
+            <p id="best_year" tabindex="1" class="best"></p>
+            <p id="best_year_full" class="full"></p>
+            <p id="best_day_of_the_year" tabindex="1" class="best"></p>
+            <p id="best_day_of_the_year_full" class="full"></p>
+            <p id="rate_changes"></p>
+        </div>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/highstock.js"></script>
+        <script type="text/javascript" src="js/simple-statistics.min.js"></script>
+        <script type="text/javascript" src="js/money.js"></script>
+    </body>
+</html>
