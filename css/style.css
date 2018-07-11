@@ -35,7 +35,7 @@ body {
 #buying_advice {
 	background-color: rgba(255, 255, 255, 0.8);
 	display: block;
-	padding: 0 15px;
+	padding: 15px;
 	visibility: hidden;
 }
 #buying_advice h2 {
@@ -180,9 +180,9 @@ body {
 	display: grid;
 }
 #money {
-	margin-bottom: 15px;
+	margin: 0 auto 15px auto;
+	width: 95%;
 }
-
 .highcharts-background {
 	fill: rgba(255, 255, 255, 0.85);
 }
