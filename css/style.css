@@ -180,7 +180,7 @@ body {
 	display: grid;
 }
 #money {
-	margin: 0 auto 15px auto;
+	margin: 10px auto 15px auto;
 	width: 95%;
 }
 .highcharts-background {
