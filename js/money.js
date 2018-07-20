@@ -499,7 +499,8 @@ function go(result) {
 	});
 
 	// finally make the dynamic html visible
-	$("#summary").css({"visibility": "visible"});
+	$("#money").css({"visibility": "visible"});
+    $("#summary").css({"visibility": "visible"});
 	$("#current").css({"visibility": "visible"});
 	$("#buying_advice").css({"visibility": "visible"});
 }

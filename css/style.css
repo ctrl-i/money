@@ -182,6 +182,7 @@ body {
 #money {
 	margin: 10px auto 15px auto;
 	width: 95%;
+	visibility: hidden;
 }
 .highcharts-background {
 	fill: rgba(255, 255, 255, 0.85);
