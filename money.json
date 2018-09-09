@@ -74,6 +74,11 @@
             "rate": "1.2666",
             "type": "travel card",
             "where": "Sainsbury's"
+        },
+        "2018/09/02": {
+            "rate": "1.2560",
+            "type": "travel card",
+            "where": "Sainsbury's"
         }
     },
     "rates": {
