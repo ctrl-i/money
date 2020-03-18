@@ -530,6 +530,7 @@ function plural(astr, val) {
 // long ago the date represents
 // see: https://stackoverflow.com/a/7641822
 function prettyDate(time_arr) {
+	if (typeof time_arr !== 'undefined') { return []; };
 	var date = new Date(time_arr[0]);
 	var diff = (((new Date()).getTime() - date.getTime()) / 1000);
 	var day_diff = Math.floor(diff / 86400);
