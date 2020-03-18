@@ -479,7 +479,10 @@ function go(result) {
 	var since = get_since();
 	var since_when = ["low", "high"];
 	for (var lh in since_when){
-		console.log(since[lh]);
+		if(since[lh]==""){
+			since[lh][0] = "today";
+			since[lh][1] = data.current[1]).toFixed(4);
+		};
 		$("#" + since_when[lh] + "est_since").html(since[lh][0]);
 		$("#" + since_when[lh] + "est_since_value").html(parseFloat(since[lh][1]).toFixed(4));
 	}
