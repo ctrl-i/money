@@ -417,9 +417,9 @@ function draw_lines(chart) {
 function get_since() {
 	var dates = [];
 	var data_wanted = data.rates.filter(function(el) { return el[1] <= data.current[1] && el[0] !== data.current[0]; });
-	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));};
+	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));} else {dates.push(prettyDate(data.current[1]));};
 	data_wanted = data.rates.filter(function(el) { return el[1] >= data.current[1] && el[0] !== data.current[0]; });
-	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));};
+	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));} else {dates.push(prettyDate(data.current[1]));};
 	return dates;
 }
 
