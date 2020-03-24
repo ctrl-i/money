@@ -417,9 +417,9 @@ function draw_lines(chart) {
 function get_since() {
 	var dates = [];
 	var data_wanted = data.rates.filter(function(el) { return el[1] <= data.current[1] && el[0] !== data.current[0]; });
-	dates.push(prettyDate(data_wanted.pop()));
+	if (data_wanted.length>0){dates.push(prettyDate(data_wanted.pop()));};
 	data_wanted = data.rates.filter(function(el) { return el[1] >= data.current[1] && el[0] !== data.current[0]; });
-	dates.push(prettyDate(data_wanted.pop()));
+	if (data_wanted.length>0){dates.push(prettyDate(data_wanted.pop()));};
 	return dates;
 }
 
@@ -479,7 +479,7 @@ function go(result) {
 	var since = get_since();
 	var since_when = ["low", "high"];
 	for (var lh in since_when){
-		console.log(since)
+		console.log(since);
 		if(typeof since[lh] === "undefined"){
 			$("#" + since_when[lh] + "est_since").css("display", "none");
 		} else {
