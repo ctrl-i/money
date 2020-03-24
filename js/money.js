@@ -420,7 +420,6 @@ function get_since() {
 	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));};
 	data_wanted = data.rates.filter(function(el) { return el[1] >= data.current[1] && el[0] !== data.current[0]; });
 	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));};
-	if (dates.length>0){dates.push(prettyDate(data.current[1]));};
 	return dates;
 }
 
@@ -480,13 +479,13 @@ function go(result) {
 	var since = get_since();
 	var since_when = ["low", "high"];
 	for (var lh in since_when){
-		console.log(since[lh]);
-		if(since[lh][0]==""){
-			since[lh][0] = "today";
-			since[lh][1] = data.current[1].toFixed(4);
+		if(typeof since[lh] === "undefined"){
+			$("#" + since_when[lh] + "est_since").parent().css("display", "none");
+		} else {
+			$("#" + since_when[lh] + "est_since").parent().css("display", "block");
+			$("#" + since_when[lh] + "est_since").html(since[lh][0]);
+			$("#" + since_when[lh] + "est_since_value").html(parseFloat(since[lh][1]).toFixed(4));
 		};
-		$("#" + since_when[lh] + "est_since").html(since[lh][0]);
-		$("#" + since_when[lh] + "est_since_value").html(parseFloat(since[lh][1]).toFixed(4));
 	}
 	calculate_sequences();
 	$(".highlightw").hover(function(){
