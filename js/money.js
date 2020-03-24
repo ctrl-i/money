@@ -480,9 +480,9 @@ function go(result) {
 	var since_when = ["low", "high"];
 	for (var lh in since_when){
 		if(typeof since[lh] === "undefined"){
-			$("#" + since_when[lh] + "est_since").parent().css("display", "none");
+			$("#" + since_when[lh] + "est_since").css("display", "none");
 		} else {
-			$("#" + since_when[lh] + "est_since").parent().css("display", "block");
+			$("#" + since_when[lh] + "est_since").css("display", "block");
 			$("#" + since_when[lh] + "est_since").html(since[lh][0]);
 			$("#" + since_when[lh] + "est_since_value").html(parseFloat(since[lh][1]).toFixed(4));
 		};
