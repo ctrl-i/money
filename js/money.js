@@ -420,6 +420,7 @@ function get_since() {
 	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));};
 	data_wanted = data.rates.filter(function(el) { return el[1] >= data.current[1] && el[0] !== data.current[0]; });
 	if (dates.length>0){dates.push(prettyDate(data_wanted.pop()));};
+	if (dates.length>0){dates.push(prettyDate(data.current[1]));};
 	return dates;
 }
 
@@ -479,6 +480,7 @@ function go(result) {
 	var since = get_since();
 	var since_when = ["low", "high"];
 	for (var lh in since_when){
+		console.log(since[lh]);
 		if(since[lh][0]==""){
 			since[lh][0] = "today";
 			since[lh][1] = data.current[1].toFixed(4);
