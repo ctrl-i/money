@@ -479,6 +479,7 @@ function go(result) {
 	var since = get_since();
 	var since_when = ["low", "high"];
 	for (var lh in since_when){
+		console.log(since)
 		if(typeof since[lh] === "undefined"){
 			$("#" + since_when[lh] + "est_since").css("display", "none");
 		} else {
