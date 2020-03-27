@@ -416,9 +416,9 @@ function draw_lines(chart) {
 // a function that returns the date since the value was higher/lower
 function get_since() {
 	var dates = [];
-	var data_wanted = data.rates.filter(function(el) { return el[1] <= data.current[1] && el[0] !== data.current[0]; });
+	var data_wanted = data.rates.filter(function(el) { return el[1] < data.current[1] && el[0] !== data.current[0]; });
 	if (data_wanted.length>0){dates.push(prettyDate(data_wanted.pop()));};
-	data_wanted = data.rates.filter(function(el) { return el[1] >= data.current[1] && el[0] !== data.current[0]; });
+	data_wanted = data.rates.filter(function(el) { return el[1] > data.current[1] && el[0] !== data.current[0]; });
 	if (data_wanted.length>0){dates.push(prettyDate(data_wanted.pop()));};
 	return dates;
 }
@@ -478,9 +478,7 @@ function go(result) {
 	$("#last_updated").html(Highcharts.dateFormat("%d %B %Y", data.current[0]));
 	var since = get_since();
 	var since_when = ["low", "high"];
-	console.log(since);
 	for (var lh in since_when){
-		console.log(lh);
 		if(since[lh][0]==""){
 			since[lh][0] = "today";
 			since[lh][1] = data.current[1].toFixed(4);
