@@ -478,6 +478,7 @@ function go(result) {
 	$("#last_updated").html(Highcharts.dateFormat("%d %B %Y", data.current[0]));
 	var since = get_since();
 	var since_when = ["low", "high"];
+	console.log(since);
 	for (var lh in since_when){
 		if(since[lh][0]==""){
 			since[lh][0] = "today";
