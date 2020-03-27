@@ -480,6 +480,7 @@ function go(result) {
 	var since_when = ["low", "high"];
 	console.log(since);
 	for (var lh in since_when){
+		console.log(lh);
 		if(since[lh][0]==""){
 			since[lh][0] = "today";
 			since[lh][1] = data.current[1].toFixed(4);
